@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Repository.h"
-
+#include "Tranzaction.h"
 
 int main() {
-	Repository<std::string> repo("textfile.txt");
+	Repository<Tranzaction> repo("textfile.txt");
 }

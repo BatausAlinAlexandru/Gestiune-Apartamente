@@ -1,8 +1,7 @@
 #include <vector>
 #include <string>
 
-template <class T> 
-class Repository {
+template <class T> class Repository {
 private:
 	std::vector<T> vector;
 	std::string fileName;
@@ -60,4 +59,34 @@ template<class T> inline void Repository<T>::deleteElem(const T& elem) {
 	}
 	// After every push_back we need to update the file
 	this->saveToFile();
+}
+
+template<class T> inline void Repository<T>::loadFromFile() {
+	if (this->fileName.empty()) {
+		std::cout << "The file is empty !!!! \n";
+	}
+	else {
+		std::ifstream file(this->fileName);
+		T element;
+		while (!file.eof()) {
+			file >> element;
+			if (!(element == T()))
+				this->addElem(element);
+		}
+		file.close();
+	}
+};
+
+template<class T> inline void Repository<T>::saveToFile() {
+	if (this->fileName.empty()) {
+		std::cout << "I can't save to file\n";
+	}
+	else {
+		std::ofstream file(this->fileName);
+		for (int i = 0; i < this->vector.size(); i++)
+			if (i < this->vector.size() - 1)
+				file << this->vector[i] << '\n';
+			else
+				file << this->vector[i];
+	}
 };
