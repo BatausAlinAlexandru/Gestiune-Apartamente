@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Repository.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Repository.h" />
