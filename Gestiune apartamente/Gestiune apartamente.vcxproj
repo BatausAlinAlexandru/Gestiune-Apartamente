@@ -140,10 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Service.cpp" />
     <ClCompile Include="Tranzaction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Repository.h" />
+    <ClInclude Include="Service.h" />
     <ClInclude Include="Tranzaction.h" />
   </ItemGroup>
   <ItemGroup>

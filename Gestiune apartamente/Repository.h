@@ -1,3 +1,5 @@
+#pragma once
+#include <iostream>
 #include <vector>
 #include <string>
 
@@ -10,6 +12,8 @@ public:
 	Repository(const std::string fileName);
 	~Repository();
 
+	std::vector<T> getAll();
+	
 	int getLenght();
 
 	void addElem(const T& elem);
@@ -27,9 +31,14 @@ template<class T> inline Repository<T>::Repository() {
 
 template<class T> inline Repository<T>::Repository(const std::string fileName) {
 	this->fileName = fileName;
+	this->loadFromFile();
 };
 
 template<class T> inline Repository<T>::~Repository() = default;
+
+template<class T> inline std::vector<T> Repository<T>::getAll() {
+	return this->vector;
+}
 
 template<class T> inline int Repository<T>::getLenght() {
 	return this->vector.size();

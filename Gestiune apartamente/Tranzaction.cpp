@@ -73,7 +73,7 @@ std::istream& operator>>(std::istream& is, Tranzaction& tranzaction)
 		myDescription.erase(std::remove(myDescription.begin(), myDescription.begin() + 1, ' '), myDescription.begin() + 1);
 	
 	tranzaction.description = myDescription;
-	std::cout << myDescription << std::endl;
+	//std::cout << myDescription << std::endl;
 
 	return is;
 }
