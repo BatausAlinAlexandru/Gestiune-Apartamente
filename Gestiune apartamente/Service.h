@@ -1,24 +1,24 @@
 #pragma once
 #include <vector>
 #include "Repository.h"
-#include "Tranzaction.h"
+#include "Transaction.h"
 class Service {
 private:
-	Repository<Tranzaction>& repo;
+	Repository<Transaction>& repo;
 
 public:
 	Service();
-	Service(Repository<Tranzaction>& repo);
+	Service(Repository<Transaction>& repo);
 	~Service();
 
 	
 
 	// Operations
-	void addTranzactionService(int day, int sum, std::string type, std::string description);
-	void deleteTranzactionService(int day);
-	void updateTranzactionService(int day, int sum, std::string type, std::string description);
-	void undoTranzactionService();
-	std::vector<Tranzaction> getAll();
+	void addTransactionService(int day, int sum, std::string type, std::string description);
+	void deleteTransactionService(int day);
+	void changeTransactionService(int day, std::string type, std::string description, int sum);
+	void undoTransactionService();
+	std::vector<Transaction> getAll();
 	int getIt();
 };
 

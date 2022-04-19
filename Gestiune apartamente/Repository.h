@@ -79,9 +79,15 @@ template<class T> inline void Repository<T>::addElem(const T & elem) {
 
 template<class T> inline void Repository<T>::updateElem(const T & oldElem, const T & newElem) {
 	this->loadFromFile();
-	for (int i = 0; i < this->getLenght(); i++) {
+	/*for (int i = 0; i < this->getLenght(); i++) {
 		if (this->vector[i] == oldElem)
 			this->vector[i] = newElem;
+	}*/
+	typename std::vector<T>::iterator it;
+	it = std::find(this->vector.begin(), this->vector.end(), oldElem);
+	if (it != this->vector.end())
+	{
+		*it = newElem;
 	}
 	
 	this->updateFileName();

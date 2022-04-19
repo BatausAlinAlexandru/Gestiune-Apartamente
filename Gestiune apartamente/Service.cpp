@@ -3,18 +3,18 @@
 Service::Service() : repo(repo) {
 };
 
-Service::Service(Repository<Tranzaction>& repo) : repo(repo) {
+Service::Service(Repository<Transaction>& repo) : repo(repo) {
 };
 
 Service::~Service() {
 };
 
-void Service::undoTranzactionService()
+void Service::undoTransactionService()
 {
 	this->repo.undo();
 }
 
-std::vector<Tranzaction> Service::getAll()
+std::vector<Transaction> Service::getAll()
 {
 	return this->repo.getAll();
 }
@@ -24,25 +24,27 @@ int Service::getIt()
 }
 ;
 
-void Service::addTranzactionService(int day, int sum, std::string type, std::string description)
+void Service::addTransactionService(int day, int sum, std::string type, std::string description)
 {
-	Tranzaction tranzaction(day, sum, type, description);
-	this->repo.addElem(tranzaction);
+	Transaction Transaction(day, sum, type, description);
+	this->repo.addElem(Transaction);
 }
 
-void Service::deleteTranzactionService(int day) {
-	std::vector<Tranzaction> tranzactions = this->repo.getAll();
-	for (Tranzaction t : tranzactions) {
+void Service::deleteTransactionService(int day) {
+	std::vector<Transaction> Transactions = this->repo.getAll();
+	for (Transaction t : Transactions) {
 		if (t.getDay() == day) {
 			this->repo.deleteElem(t);
 		}
 			
 	}
 }
-void Service::updateTranzactionService(int day, int sum, std::string type, std::string description) {
-	std::vector<Tranzaction> tranzactions = this->repo.getAll();
-	for (Tranzaction t : tranzactions) {
+void Service::changeTransactionService(int day, std::string type, std::string description, int sum) {
+	Transaction newElem(day, sum, type, description);
+	std::vector<Transaction> Transactions = this->repo.getAll();
+	for (Transaction t : Transactions) {
+		std::cout << t.getDay();
 		if ((t.getDay() == day) && (t.getType() == type) && (t.getDescription() == description))
-			t.setSum(sum);
+			this->repo.updateElem(t, newElem);
 	}
 };

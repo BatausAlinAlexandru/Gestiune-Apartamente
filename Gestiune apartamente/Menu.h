@@ -13,11 +13,11 @@ private:
 	void PrintMenu();
 	std::vector<std::string> SplitCommand(std::string command);
 	
-	void UIAddTranzaction(std::string day, std::string sum, std::string type, std::string description);
-	void UIDeleteTranzactions(std::string day);
+	void UIAddTransaction(std::string day, std::string sum, std::string type, std::string description);
+	void UIDeleteTransactions(std::string day);
+	void UIChangeTransaction(std::string day, std::string type, std::string description, std::string sum);
+	void UIUndoTransaction();
 
-	void UIUndoTranzaction();
-
-	void UIShowAllTranzactions();
+	void UIShowAllTransactions();
 };
 

@@ -18,7 +18,7 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tranzaction.cpp">
+    <ClCompile Include="Transaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Service.cpp">
@@ -32,7 +32,7 @@
     <ClInclude Include="Repository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tranzaction.h">
+    <ClInclude Include="Transaction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Service.h">
