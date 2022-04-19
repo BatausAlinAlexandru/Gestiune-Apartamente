@@ -11,9 +11,14 @@ public:
 	Service(Repository<Tranzaction>& repo);
 	~Service();
 
-	std::vector<Tranzaction> getAll();
+	
 
 	// Operations
 	void addTranzactionService(int day, int sum, std::string type, std::string description);
+	void deleteTranzactionService(int day);
+	void updateTranzactionService(int day, int sum, std::string type, std::string description);
+	void undoTranzactionService();
+	std::vector<Tranzaction> getAll();
+	int getIt();
 };
 

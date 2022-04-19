@@ -6,7 +6,7 @@ private:
 	int day = 0;
 	int sum = 0;
 	std::string type = "";
-	std::string description = "";
+	std::string description = "[-]";
 
 public:
 	Tranzaction();

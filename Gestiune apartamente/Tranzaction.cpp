@@ -58,7 +58,7 @@ bool Tranzaction::operator==(const Tranzaction& tranzaction)
 std::ostream& operator<<(std::ostream& os, const Tranzaction& tranzaction)
 {
 	if (tranzaction.description.empty())
-		os << tranzaction.day << " " << tranzaction.sum << " " << tranzaction.type << " ";
+		os << tranzaction.day << " " << tranzaction.sum << " " << tranzaction.type << " [-]";
 	else
 		os << tranzaction.day << " " << tranzaction.sum << " " << tranzaction.type << " " << tranzaction.description;
 	return os;
